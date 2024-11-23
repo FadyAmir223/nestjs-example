@@ -1,0 +1,58 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Country {
+  id: String!
+  name: String!
+}
+
+input EditUserInput {
+  familyName: String
+  fatherName: String
+  firstName: String
+  grandfatherName: String
+}
+
+type LocalizedName {
+  familyName: String!
+  fatherName: String!
+  firstName: String!
+  grandfatherName: String!
+}
+
+type MaritalStatus {
+  id: String!
+  name: String!
+}
+
+type Mutation {
+  editUser(newData: EditUserInput!, userId: Int!): User
+}
+
+type NationalId {
+  expiryDate: String!
+  idNumber: String!
+}
+
+type Nationality {
+  country: Country!
+  countryId: Float!
+}
+
+type Query {
+  user(id: Int!): User
+}
+
+type User {
+  dependants: Float!
+  familyName: String!
+  fatherName: String!
+  firstName: String!
+  grandfatherName: String!
+  id: Int!
+  localizedName: LocalizedName!
+  maritalStatus: MaritalStatus!
+  nationalId: NationalId!
+  nationalities: [Nationality!]!
+}
